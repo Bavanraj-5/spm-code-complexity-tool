@@ -62,6 +62,9 @@ public class ControlStructureComplex {
 					if(control_line.contains("package")) {
 						break;
 					}
+					if(control_line.contains("System.out.")) {
+						break;
+					}
 
 									
 					//if code includes "IF-ELSE"
