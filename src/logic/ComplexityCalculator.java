@@ -7,19 +7,19 @@ public class ComplexityCalculator {
 	public static void main(String[] args) throws IOException {
 		
 		String fileLocation;
-		fileLocation = "src\\TestFiles\\MyException.java";
+		fileLocation = "src\\TestFiles\\Customer_02.java";
 
-		SizeComplex Cs = new SizeComplex(fileLocation);
+		//SizeComplex Cs = new SizeComplex(fileLocation);
 		
 		
 		//Inheritance c1=new Inheritance();
-		Inheritance Ci = new Inheritance(fileLocation);
+		//Inheritance Ci = new Inheritance(fileLocation);
 		
 
 			//Cs.checkSizeComplexity();
 		//Cs.checkSizeComplexity();
 		
-		Ci.CheckInheritance();
+		//Ci.CheckInheritance();
 //		Ctc.CheckControlStructures();
 		
 		/*Check complexity due to Control Structures*/

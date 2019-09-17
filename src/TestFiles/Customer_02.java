@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Interface.Dress;
 import Interface.Toy;
 import MarketingInterface.MarketingInterFa;
+
 public class Customer_02 extends CyclomaticComplexit {
 	
 	public static int countPerShirt = 0 , countPerT_Shirt = 0 , countPer_pant = 0;
@@ -16,20 +17,20 @@ public class Customer_02 extends CyclomaticComplexit {
 	public static  List <Object> stringlist = new ArrayList<Object>();
 	public static  List <Object> TotalInvoicelist = new ArrayList<Object>();
 
-	String s1; print(); c++;
-	try {
-		
-	}catch() {
-		
-	}
+	String s1;
+	print();
+	c++;
+	
+	try {}
+	catch(Exception e) {}
+	
 	// Method where customer selects the shop
 	public static int find() {
 		Scanner sc = new Scanner(System.in);
 		String whileCon = "yes";
 		
-import		
 		System.out.println("Select a shop! \n 1: Dress Shop \n 2: Fruit Shop \n 3: Toy Shop");
-	   int details = sc.nextInt();
+		int details = sc.nextInt();
 	   
 	   //
 	   if( details == 1 ) {
@@ -41,12 +42,9 @@ import
 	   else if( details == 3 ) {
 		   return 3;
 	   }
-	return 0;
-		
-		
-		
+	   
+	   return 0;	
 	}
-	
 	
 	
 	//Method for Dress Shop
@@ -58,8 +56,7 @@ import
 		dr.printmenu();
 		int total = 0;
 		String whileCon = "yes";
-		do {
-			
+		do {		
 			System.out.println("Select Dress! \n 1: Shirt \n 2: T-Shirt \n 3: Jeans");
 			int DressName = scan.nextInt();
 			   
@@ -73,9 +70,7 @@ import
 				customer.setqty( countPerShirt );
 				total += dr.Sales( num, dr.shirt );
 				stringlist.add( customer.getItem());
-				stringlist.add( customer.getqty());
-				
-				
+				stringlist.add( customer.getqty());	
 				}
 			else if( DressName == 2 && DressName == 3) {
 				System.out.println( "How many T-shirt/s do you want?" );
@@ -88,9 +83,7 @@ import
 				customer.setItem("t-shirt");
 				customer.setqty(countPerT_Shirt);
 				stringlist.add(customer.getItem());
-				stringlist.add(customer.getqty());
-				
-				
+				stringlist.add(customer.getqty());	
 			}
 			else if(DressName==3) {
 				System.out.println("How many Jean/s do you want?");
@@ -103,7 +96,6 @@ import
 				customer.setqty(countPer_pant);
 				stringlist.add(customer.getItem());
 				stringlist.add(customer.getqty());
-			   
 			}
 			else 
 			 System.out.println("Unexpected error! Please try again");
@@ -118,8 +110,7 @@ import
 			System.out.println("Do you want to continue? 'yes' for YES \n 'no' for NO");
 			whileCon = scan.next();
 
-			} 
-		while(whileCon.equals("yes")); 
+			}while(whileCon.equals("yes")); 
 		
 		//printing the bill for Dress shop
 		System.out.println("*******************************************************");
@@ -128,7 +119,6 @@ import
 
 		System.out.println("	Items 	QTY 	Price        ");
 		for(Object obj:stringlist) {
-
 			if(obj.getClass() == Integer.class) {
 				 System.out.print(" "+obj+" \t");
 			}
@@ -138,9 +128,7 @@ import
 			if(obj.getClass()==Float.class) {
 				 System.out.print(" "+obj+"\n ");
 				 TotalPrice+=(Float)obj;
-			}
-			
-			
+			}	
 	      }
 
 		System.out.println("--------------------------------------------------------");   
@@ -157,7 +145,7 @@ import
 	}
 	
 	
- // Method for Fruits shop
+	// Method for Fruits shop
 	public static void run(MarketingInterFa ms) {
 		Scanner scan = new Scanner(System.in);
 		Customer customer = new Customer();
@@ -166,61 +154,60 @@ import
 		String whileCon = "yes";
 		int total = 0;
 		do {
-		System.out.println("Select the fruit you want to buy! \n 1: Apple \n 2: Jackfruit \n 3: Pamagram ");
-		int ToyName = scan.nextInt();
+			System.out.println("Select the fruit you want to buy! \n 1: Apple \n 2: Jackfruit \n 3: Pamagram ");
+			int ToyName = scan.nextInt();
 		
-		if(ToyName==1) {
-			System.out.println("How many apple/s do you want?");
-			int num = scan.nextInt();
-			countApple+=num;
-			System.out.println("Current Bill: "+ms.buy(num, ms.Apple)+"LKR");
-			total+=ms.buy(num, ms.Apple);
+			if(ToyName==1) {
+				System.out.println("How many apple/s do you want?");
+				int num = scan.nextInt();
+				countApple+=num;
+				System.out.println("Current Bill: "+ms.buy(num, ms.Apple)+"LKR");
+				total+=ms.buy(num, ms.Apple);
+				
+				customer.setItem("apple");
+				customer.setqty(countApple);
+				
+				stringlist.add(customer.getItem());
+				stringlist.add(customer.getqty());
+			}
+			else if(ToyName==2) {
+				System.out.println("How many jackfruit/s do you want?");
+				int num = scan.nextInt();
+				countJackfruit+=num;
+				System.out.println("Current Bill: "+ms.buy(num, ms.jackfruit)+"LKR");
+				total+=ms.buy(num, ms.jackfruit);
+				
+				customer.setItem("jackfruit");
+				customer.setqty(countJackfruit);
+				stringlist.add(customer.getItem());
+				stringlist.add(customer.getqty());
+			}
+			else if(ToyName==3) {
+				System.out.println("How many pamagram/s do you want?");
+				int num = scan.nextInt();
+				countPamagram+=num;
+				System.out.println("Current Bill: "+ms.buy(num, ms.pamagram)+"LKR");
+				total+=ms.buy(num, ms.pamagram);
+				
+				customer.setItem("pamagram");
+				customer.setqty(countPamagram);
+				stringlist.add(customer.getItem());
+				stringlist.add(customer.getqty());
+			}	
+			else 
+				System.out.println("Unexpected error! Please try again");
 			
-			customer.setItem("apple");
-			customer.setqty(countApple);
+			customer.setprice(total);
+			 stringlist.add(customer.getprice());
 			
-			stringlist.add(customer.getItem());
-			stringlist.add(customer.getqty());
-		}
-		else if(ToyName==2) {
-			System.out.println("How many jackfruit/s do you want?");
-			int num = scan.nextInt();
-			countJackfruit+=num;
-			System.out.println("Current Bill: "+ms.buy(num, ms.jackfruit)+"LKR");
-			total+=ms.buy(num, ms.jackfruit);
+			countPamagram=0;
+			countJackfruit=0;
+			countApple=0;
+			total=0;
 			
-			customer.setItem("jackfruit");
-			customer.setqty(countJackfruit);
-			stringlist.add(customer.getItem());
-			stringlist.add(customer.getqty());
-		}
-		else if(ToyName==3) {
-			System.out.println("How many pamagram/s do you want?");
-			int num = scan.nextInt();
-			countPamagram+=num;
-			System.out.println("Current Bill: "+ms.buy(num, ms.pamagram)+"LKR");
-			total+=ms.buy(num, ms.pamagram);
 			
-			customer.setItem("pamagram");
-			customer.setqty(countPamagram);
-			stringlist.add(customer.getItem());
-			stringlist.add(customer.getqty());
-		}
-		else 
-			System.out.println("Unexpected error! Please try again");
-		
-		customer.setprice(total);
-		 stringlist.add(customer.getprice());
-		
-		countPamagram=0;
-		countJackfruit=0;
-		countApple=0;
-		total=0;
-		
-		
-		System.out.println("Do you want to continue? 'yes' for YES \n 'no' for NO");
-		whileCon=scan.next();
-		
+			System.out.println("Do you want to continue? 'yes' for YES \n 'no' for NO");
+			whileCon=scan.next();
 		
 		}while(whileCon.equals("yes")); 
 		
@@ -229,6 +216,7 @@ import
 		System.out.println("*******************************************************");
 
 		System.out.println("	Items 	QTY 	Price        ");
+		
 		for(Object obj:stringlist) {
 			if(obj.getClass()==Integer.class) {
 				 System.out.print(" "+obj+" \t");
@@ -258,6 +246,7 @@ import
 		TotalPrice=0;
 		
 	}
+	
 	public static void run3(Toy toy) {
 		Scanner scan=new Scanner(System.in);
 		Customer customer=new Customer();
@@ -266,7 +255,7 @@ import
 		
 		int total=0;
 		
-		do{
+		do {
 			System.out.println("Select the Toy to buy! \n 1: Car \n 2: Doll \n 3: Bus ");
 			int ToyName=scan.nextInt();
 			
@@ -313,9 +302,9 @@ import
 				System.out.println("Unexpected error! Please try again");
 			   
 			customer.setprice(total);
-			 stringlist.add(customer.getprice());
+			stringlist.add(customer.getprice());
 			
-			 countDoll=0;
+			countDoll=0;
 			countBus=0;
 			countcar=0;
 			total=0;
@@ -331,6 +320,7 @@ import
 		System.out.println("*******************************************************");
 
 		System.out.println("	Items 	QTY 	Price        ");
+		
 		for(Object obj:stringlist) {
 			if(obj.getClass()==Integer.class) {
 				 System.out.print(" "+obj+" \t");
@@ -365,6 +355,7 @@ import
 		System.out.println("                 TOTAL INVOICE                                       ");
 		System.out.println("*******************************************************");
 		System.out.println("	Items 	Price        ");
+		
 		for(Object obj:TotalInvoicelist) {
 			if(obj.getClass()==Integer.class) {
 				 System.out.print(" "+obj+" \t");
@@ -377,6 +368,7 @@ import
 				 TotalPrice+=(Float)obj;
 			}			
 	      }
+		
 		if(DelDistance != 0) {
 			System.out.println(" Distance 	  "+HomeDeliveryCharge + "   " +DelDistance+"km");
 		}
@@ -388,5 +380,22 @@ import
 		TotalInvoicelist.clear();
 		TotalPrice=0;
 	}
+
+	public void testSwitch() {
+		int day = 4;
+		
+		switch(day) {
+			case 0: System.out.print("Sundayy");
+					break;
+					
+			case 1: System.out.print("Mondayyy");
+					break;
+					
+			case 2: System.out.print("Tuesdayyy");
+					break;
+			
+			
+		}
+	}
+	
 }
-class run implements run1

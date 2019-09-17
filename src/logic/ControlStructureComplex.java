@@ -27,7 +27,7 @@ public class ControlStructureComplex {
 	
 	int lineNumber = 1;
 	int complexityControlStructure;
-	String words = "";
+	String words =null;
 	public boolean anyMatches = false;
 	
 	List<String> tokensFound = new ArrayList<String>();
@@ -44,9 +44,7 @@ public class ControlStructureComplex {
 			control_line = bufferedReader.readLine();
 			
 			while (control_line != null) {
-				
-				
-				
+								
 				StringTokenizer stringTokenizer = new StringTokenizer(control_line);
 				
 				while(stringTokenizer.hasMoreTokens()) {
@@ -65,10 +63,11 @@ public class ControlStructureComplex {
 					if(control_line.contains("System.out.")) {
 						break;
 					}
-
+					
+					
 									
 					//if code includes "IF-ELSE"
-					if(control_line.contains(ControlStructureConstants.IF)) {
+					if(StringUtils.contains(control_line, ControlStructureConstants.IF)) {
 						complexityControlStructure++;
 						
 						for(int i=0;i<ControlStructureConstants.LOGICAL_OPERATORS.length;i++) {
@@ -86,7 +85,7 @@ public class ControlStructureComplex {
 
 					
 					//if code includes "FOR loop"
-					if(control_line.contains(ControlStructureConstants.FOR)) {
+					if(StringUtils.contains(control_line, ControlStructureConstants.FOR)) {
 						complexityControlStructure += 2;
 						
 						for(int i=0 ; i<ControlStructureConstants.LOGICAL_OPERATORS.length ; i++) {
@@ -106,7 +105,7 @@ public class ControlStructureComplex {
 
 					
 					//if code includes "WHILE loop"
-					if(words.equals(ControlStructureConstants.WHILE)) {
+					if(StringUtils.contains(control_line, ControlStructureConstants.WHILE)) {
 						complexityControlStructure += 2;
 							
 						for(int i=0 ; i<ControlStructureConstants.LOGICAL_OPERATORS.length ; i++) {
@@ -126,8 +125,8 @@ public class ControlStructureComplex {
 					
 					
 					//if code includes "DO-WHILE loop"
-					if(words.equals(ControlStructureConstants.DO)) {
-						complexityControlStructure += 2;
+					if(StringUtils.contains(control_line, ControlStructureConstants.DO)) {
+						complexityControlStructure =complexityControlStructure+ 2;
 						
 						for(int i=0 ; i<ControlStructureConstants.LOGICAL_OPERATORS.length ; i++) {
 							int x = StringUtils.countMatches(control_line, ControlStructureConstants.LOGICAL_OPERATORS[i]);
@@ -144,7 +143,26 @@ public class ControlStructureComplex {
 						anyMatches = true;
 					}
 		
-					
+					//if code includes "SWITCH_CASE"
+					if(StringUtils.contains(control_line, ControlStructureConstants.SWITCH)) {
+						//for(int j=0 ; j<ControlStructureConstants.CASE.length() ; j++) {
+							complexityControlStructure = complexityControlStructure+1;
+							
+							for(int i=0 ; i<ControlStructureConstants.LOGICAL_OPERATORS.length ; i++) {
+								int x = StringUtils.countMatches(control_line, ControlStructureConstants.LOGICAL_OPERATORS[i]);
+								int val = x;
+								complexityControlStructure += val;
+							}
+							
+							for(int i=0 ; i<ControlStructureConstants.BITWISE_OPERATORS.length ; i++) {
+								int x = StringUtils.countMatches(control_line, ControlStructureConstants.BITWISE_OPERATORS[i]);
+								int val = x;
+								complexityControlStructure += val;
+							}
+							
+						//}
+						anyMatches = true;
+					}
 				
 				}
 				
