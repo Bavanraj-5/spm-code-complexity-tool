@@ -21,6 +21,7 @@ public class RecursionComplex {
         int RecursiveLine = 0;
         int OpenBracket = 0;
         int CloseBracket = 0;
+        Boolean RecursiveMethod = false;
 //        String[] firstWord;
 //        String[] methodName;
 //        String[] returnType = {"int", "float", "double", "long", "void", "String"};
@@ -93,6 +94,10 @@ public class RecursionComplex {
         		if(line.contains("{")) {
         			OpenBracket++;      
         		}
+        		if((OpenBracket != CloseBracket) && (line.contains(methodName))) {
+        			System.out.println("FROM Line: " + RecursiveLine);
+        			RecursiveMethod = true ;
+        		}
         		if(line.contains("}")) {
         			CloseBracket++;      
         		}
@@ -100,7 +105,12 @@ public class RecursionComplex {
         			methodName = null;
         			OpenBracket = 0;
         			CloseBracket = 0;
+        			if(RecursiveMethod) {
+        				System.out.println("UPTO Line: " + LineCount);
+        				RecursiveMethod = false;
+        			}       			
         		}
+        	
         	}
         	
         	
