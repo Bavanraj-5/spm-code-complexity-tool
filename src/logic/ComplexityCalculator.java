@@ -7,16 +7,16 @@ public class ComplexityCalculator {
 	public static void main(String[] args) throws IOException {
 		
 		String fileLocation;
-		fileLocation = "src\\TestFiles\\Customer_02.java";
+		fileLocation = "D:\\Eclipse Workspace\\SPM Final\\src\\TestFiles\\FibonacciMain.java";
 
-		//SizeComplex Cs = new SizeComplex(fileLocation);
+		SizeComplex Cs = new SizeComplex(fileLocation);
 		
 		
 		//Inheritance c1=new Inheritance();
-		//Inheritance Ci = new Inheritance(fileLocation);
+		Inheritance Ci = new Inheritance(fileLocation);
 		
 
-			//Cs.checkSizeComplexity();
+			Cs.checkSizeComplexity();
 		//Cs.checkSizeComplexity();
 		
 		//Ci.CheckInheritance();
@@ -24,7 +24,7 @@ public class ComplexityCalculator {
 		
 		/*Check complexity due to Control Structures*/
 		ControlStructureComplex Csc = new ControlStructureComplex(fileLocation);
-		Csc.calcControlStructureComplexity();
+		//Csc.calcControlStructureComplexity();
 
 	}
 
