@@ -47,7 +47,7 @@ public class RecursionComplex {
 //                words = stringToken.nextToken();
                 
                 //if(firstWord[0].equals("public") || firstWord[0].equals("static") || firstWord[0].equals(returnType) ) {
-        	if( (line.contains("public") || line.contains("static") || line.contains("void")) && !(line.contains("class"))) {
+        	if( (line.contains("public") || line.contains("static") || line.contains("void")) && !(line.contains("class")) && (line.contains("("))) {
                 	
         			OpenBracket = 1;
         			RecursiveLine = LineCount;
@@ -90,7 +90,7 @@ public class RecursionComplex {
 
                 }
         	
-        	if (!((line.contains("public") || line.contains("static") || line.contains("void")) && !(line.contains("class"))) && (OpenBracket != 0)) {
+        	if (!((line.contains("public") || line.contains("static") || line.contains("void")) && !(line.contains("class")) && (line.contains("("))) && (OpenBracket != 0)) {
         		if(line.contains("{")) {
         			OpenBracket++;      
         		}
