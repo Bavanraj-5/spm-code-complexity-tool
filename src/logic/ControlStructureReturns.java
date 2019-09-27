@@ -7,13 +7,15 @@ public class ControlStructureReturns {
 	public int lineNumber;
 	public List<String> tokenFound;
 	public int CtcValue;
+	public int CncValue;
 
 	
 	//constructor
-	public ControlStructureReturns(int lineNumber,int ctcValue) {
+	public ControlStructureReturns(int lineNumber,int ctcValue,int cncValue) {
 		super();
 		this.lineNumber = lineNumber;
 		CtcValue = ctcValue;
+		CncValue = cncValue;
 	}
 
 
@@ -41,5 +43,14 @@ public class ControlStructureReturns {
 	public void setCtcValue(int ctcValue) {
 		CtcValue = ctcValue;
 	}
-	
+
+	public int getCncValue() {
+		return CncValue;
+	}
+
+
+	public void setCncValue(int cncValue) {
+		CncValue = cncValue;
+	}
+		
 }
