@@ -26,31 +26,9 @@ public class RecursionComplex {
 
 	public void CheckRecursion(String line) {
 
-//		String line = null;
-//        String[] firstWord;
-//        String[] methodName;
-//        String[] returnType = {"int", "float", "double", "long", "void", "String"};
-//        System.out.println("Hellow");
 
 		try {
 
-//			fileLocation = "D:\\Eclipse Workspace\\SpmWebApp\\src\\TestFiles\\FibonacciMain.java";
-//			FileReader filereader = new FileReader(fileLocation);
-//			BufferedReader bufferedreader = new BufferedReader(filereader);
-//			line = bufferedreader.readLine();
-//			LineCount = 1;
-
-//			while (line != null) {
-				// StringTokenizer stringToken = new StringTokenizer(line);
-				// firstWord = line.split(" ");
-				// firstWord[0] = firstWord[0].trim();
-				// System.out.println(firstWord[0]);
-
-//            while (stringToken.hasMoreTokens()) {
-//                words = stringToken.nextToken();
-
-				// if(firstWord[0].equals("public") || firstWord[0].equals("static") ||
-				// firstWord[0].equals(returnType) ) {
 				if ((line.contains("public") || line.contains("static") || line.contains("void"))
 						&& !(line.contains("class")) && (line.contains("("))) {
 
@@ -73,25 +51,9 @@ public class RecursionComplex {
 					methodLine = methodLine.replaceAll("\\{", "");
 					methodLine = methodLine.replaceAll(" ", "");
 					methodLine = methodLine.replaceAll("	", "");
-					// methodName = methodLine.split(" ");
-					// methodName[0] = methodName[0].trim();
-					// if()
-					// words = methodLine.split("\\s");
+	
 					methodName = methodLine;
 
-					//System.out.println("methodName:" + methodName);
-
-//                	for(String WordsInLine : words) {
-//                		if(WordsInLine.contains("(")) {
-//                			methodName = WordsInLine;
-//                			//methodName = methodName.replaceAll("(","");
-//                			System.out.println(methodName);
-//                		}
-//                		System.out.println(WordsInLine);
-//                		
-//                	}
-//					 System.out.println(methodLine);
-//					 System.out.println("After***");
 
 				}
 
@@ -101,7 +63,6 @@ public class RecursionComplex {
 						OpenBracket++;
 					}
 					if ((OpenBracket != CloseBracket) && (line.contains(methodName))) {
-						//System.out.println("FROM Line: " + RecursiveLine);
 						if(Check != RecursiveLine) {
 							CrStartList.add(RecursiveLine);
 							Rstart = RecursiveLine;
@@ -117,7 +78,6 @@ public class RecursionComplex {
 						OpenBracket = 0;
 						CloseBracket = 0;
 						if (RecursiveMethod) {
-							//System.out.println("UPTO Line: " + LineCount);
 							CrEndList.add(LineCount);
 							RecursiveMethod = false;
 							Rend = LineCount;
@@ -126,10 +86,9 @@ public class RecursionComplex {
 
 				}
 
-				// }
-				//line = bufferedreader.readLine();
+
 				LineCount++;
-			//}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -137,10 +96,4 @@ public class RecursionComplex {
 
 	}
 
-//	public static void main(String args[]) {
-//
-//		RecursionComplex RC = new RecursionComplex();
-//
-//		RC.CheckRecursion();
-//	}
 }

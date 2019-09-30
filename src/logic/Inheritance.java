@@ -45,12 +45,7 @@ public class Inheritance {
 	public void CheckInheritance(String line) {
 
 		try {
-//			FileReader filereader = new FileReader(fileLocation);
-//			BufferedReader bufferedreader = new BufferedReader(filereader);
-//      
-//			line = bufferedreader.readLine();
-//			Inhercomplexity=2;
-//			while(line!=null) {
+
 			line = line.trim();
 
 			StringTokenizer stringTokenizer = new StringTokenizer(line);
@@ -73,7 +68,6 @@ public class Inheritance {
 
 				if (line.contains("}") || line.isEmpty()) {
 					Inhercomplexity1 = 0;
-					// System.out.println(line);
 					break;
 				}
 
@@ -87,17 +81,6 @@ public class Inheritance {
 					break;
 				}
 
-//				if (line.contains("//")) {
-//					Inhercomplexity1 = 0;
-//					break;
-//				}
-
-				//
-//					if(line.trim().length()==0) {
-//					Inhercomplexity1=0;
-//					
-//					break;
-//				}
 
 				if (line.contains(SizeContstants.CLASS[0].toString())) {
 
@@ -106,14 +89,11 @@ public class Inheritance {
 						int occurence_count = StringUtils.countMatches(words, SizeContstants.IHERITANCE[arithmetic]);
 						Inhercomplexity = Inhercomplexity + occurence_count;
 
-						// System.out.println(occurence_count);
-
 						anyHits = true;
 
 					}
 
 				}
-				// totalcomplexity=Inhercomplexity;
 
 				if (line.trim().length() == 0) {
 					Inhercomplexity1 = 0;
@@ -122,7 +102,6 @@ public class Inheritance {
 				}
 			}
 
-			// line = bufferedreader.readLine();
 
 			if (anyHits) {
 
@@ -137,27 +116,12 @@ public class Inheritance {
 			}
 
 			lineNumber++;
-			// }
-
-			// bufferedreader.close();
+	
 
 		} catch (Exception e) {
 			LOGGER.info(e.toString());
 		}
 
-//		  for (int i = 0; i < returns.size(); i++) 
-//	        { 
-//	       
-//	            SizeReturns data = returns.get(i); 
-//	            
-//	            if(data.CsValuePerLine==0) {
-//	            	 System.out.println(data.lineNumber +" ");
-//	            }else {
-//	            	 System.out.println(data.lineNumber +" "+ data.CsValuePerLine); 
-//	            }
-//	            
-//	           
-//	        }
 
 	}
 

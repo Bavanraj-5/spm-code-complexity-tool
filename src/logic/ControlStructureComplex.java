@@ -51,15 +51,6 @@ public class ControlStructureComplex {
 
 		try {
 
-			// read file
-//			FileReader fileReader = new FileReader(fileLocation);
-//			BufferedReader bufferedReader = new BufferedReader(fileReader);
-//			BufferedReader bufferedReader1 = new BufferedReader(fileReader);
-
-//			control_line = bufferedReader.readLine();
-//			
-//			while (control_line != null) {
-
 			StringTokenizer stringTokenizer = new StringTokenizer(control_line);
 
 			while (stringTokenizer.hasMoreTokens()) {
@@ -87,9 +78,6 @@ public class ControlStructureComplex {
 					break;
 				}
 
-				/*
-				 * if(control_line.contains("//")) { break; }
-				 */
 
 				// if code includes "IF-ELSE"
 				if (control_line.contains(ControlStructureConstants.IF)) {
@@ -179,7 +167,6 @@ public class ControlStructureComplex {
 
 			}
 
-			// control_line = bufferedReader.readLine();
 
 			if (anyMatches) {
 				returns.add(new ControlStructureReturns(lineNumber, complexityControlStructure,
@@ -189,20 +176,10 @@ public class ControlStructureComplex {
 			FinalNested = nestedComplexityControlStructure;
 			lineNumber++;
 
-//			}
-//			
-//			bufferedReader.close();
 
 		} catch (Exception e) {
 			LOG.info(e.toString());
 		}
-
-//		for (int i = 0; i < returns.size(); i++) 
-//        { 
-//       
-//            ControlStructureReturns value = returns.get(i); 
-//            System.out.println(value.lineNumber +" "+ value.CtcValue); 
-//        }
 
 	}
 
@@ -258,7 +235,6 @@ public class ControlStructureComplex {
 	            }
 				nestedCountList.add(nestedCount);
 
-				//System.out.println(line + " " + nestedCount);
 				line=bf.readLine();
 				
 			}
@@ -273,7 +249,7 @@ public class ControlStructureComplex {
 		for(int x:nestedCountList) {
 			totalNestedCount+=x;
 		}
-		//System.out.println("Total Nested Count = " + totalNestedCount/3);
+		
 		finalNestedCount=totalNestedCount/3;
 		return finalNestedCount;
 	}

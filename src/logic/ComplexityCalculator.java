@@ -10,19 +10,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComplexityCalculator {
-	// public String fileLocation;
+
 
 	public static void main(String args[]) throws IOException {
 
 		String fileLocation;
+		
 		String line = null;
 		String line2 = null;
+		
 		int lineNo = 1;
 		int Start, FinalCps, Count, ArrCount;
+		
 		List<Integer> CpsList = new ArrayList<>();
 		List<Integer> FinalCpsList = new ArrayList<>();
+		
 		CpsList.add(0, 0);
 		FinalCpsList.add(0, 0);
+		
 		int CS, CI, CTC, CNC, TW, CPS, CR = 0;
 		int TotCS = 0, TotCI = 0, TotCTC = 0, TotCNC = 0, TotTW = 0, TotCPS = 0;
 		int xx;
@@ -130,41 +135,17 @@ public class ComplexityCalculator {
 		HTMLdisplay = HTMLtable + HTMLvalues + "</table></div>" + HTMLtable2 + HTMLvalues2
 				+ "</table></div>" + "<h4>Total Program Cs: " + TotCS + "</h4>" + "<h4>Total Program Ci: " + TotCI + "</h4>" + "<h4>Total Program Ctc: " + TotCTC + "</h4>" + "<h4>Total Program Cnc: " + TotCNC + "</h4>"
 				+ "<h3>Total Program Complexity: " + TotCPS + "</h3></div></body></html>";
+		
 		bufferedreader.close();
 		bufferedreader2.close();
+		
 		HTMLwriter.write(HTMLdisplay);
 		HTMLwriter.close();
 
 		System.out.println("Total Complexity: " + TotCPS);
 		System.out.println("FROM Line: " + Cr.CrStartList);
-		System.out.println("UPTO Line: " + Cr.CrEndList);
+		System.out.println("UP TO Line: " + Cr.CrEndList);
 
-//	      for (int counter = 0; counter < CpsList.size(); counter++) {
-//	          System.out.println("Line No: " + counter + " B4 Cps: " + CpsList.get(counter)); 		
-//	      }  
-
-//		for(int x=0; x<Cr.CrStartList.size(); x++ ) {
-//			Start = Cr.CrStartList.get(x);
-//			System.out.println("hi");
-//			for(int y=Start; y<=Cr.CrEndList.get(x); y++) {
-//				System.out.println("Start: " + y + " Cps B4 val: " + CpsList.get(y));
-//				xx = CpsList.get(y).intValue();
-//				FinalCps = xx*2; //Start + 1 ********
-//				CpsList.add(y,FinalCps);
-//				System.out.println("Start: " + y + " val: " + CpsList.get(y));
-//			}		
-//		}
-//	      for (int counter = 1; counter < CpsList.size(); counter++) {
-//	          System.out.println("Line No: " + counter + "Cps: " + CpsList.get(counter)); 		
-//	      }  
-
-//		for(int x = Cr.Rstart; x <= Cr.Rend; x++) {
-//			xx = CpsList.get(x) *2 ;
-//			System.out.println(CpsList.get(x));
-//			System.out.println(xx);
-//			CpsList.add(x,xx);
-//			System.out.println(CpsList.get(x));
-//		}
 
 	}
 

@@ -132,7 +132,6 @@ public class Control_structures {
 	               // calculate the total number of cases=switch complexity
 	                switchComplexity=switchComplexity+complexity5;
 	                
-	              //  System.out.println("Line Complexity is: " + complexity);
 	                
 	                line = bufferedreader.readLine(); // go the next line  to read 
 	            }

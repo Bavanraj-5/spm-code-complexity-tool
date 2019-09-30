@@ -26,7 +26,6 @@ public class SizeComplex {
 		this.fileLocation = fileLocation;
 	}
 
-	// variables by Manoj START
 	String line = null;// holds the line which is read from the file
 	String fileLocation;
 	public Boolean anyHits = false;
@@ -37,7 +36,6 @@ public class SizeComplex {
 	List<String> foundTokens = new ArrayList<String>();
 	ArrayList<SizeReturns> returns = new ArrayList<SizeReturns>();
 
-	// variables by Manoj END
 
 	public void checkSizeComplexity(String line) {
 
@@ -46,13 +44,6 @@ public class SizeComplex {
 			// pattern for text within double quotes
 			Pattern pattern = Pattern.compile("\"([^\"]*)\"");
 
-			// read the file
-//			FileReader filereader = new FileReader(fileLocation);
-//			BufferedReader bufferedreader = new BufferedReader(filereader);
-//
-//			line = bufferedreader.readLine();
-//
-//			while (line != null) {
 			complexitySize = 0;
 
 			StringTokenizer stringTokenizer = new StringTokenizer(line);
@@ -187,9 +178,7 @@ public class SizeComplex {
 
 				// for variables and methods
 				for (String elem : variables) {
-					// System.out.println(variables);
 					if (StringUtils.contains(words, elem)) {
-						// System.out.println("Inceremented");
 						complexitySize++;
 						break;
 					}
@@ -211,7 +200,6 @@ public class SizeComplex {
 				}
 			}
 
-			// line = bufferedreader.readLine();
 
 			if (anyHits) {
 				returns.add(new SizeReturns(lineNumber, complexitySize));
@@ -219,24 +207,12 @@ public class SizeComplex {
 			}
 
 			lineNumber++;
-			// }
-
-			// bufferedreader.close();
+		
 
 		} catch (Exception e) {
 			LOGGER.info(e.toString());
 		}
 
-//		for (int i = 0; i < returns.size(); i++) {
-//
-//			SizeReturns data = returns.get(i);
-//			if (data.CsValuePerLine == 0) {
-//				System.out.println(data.lineNumber + " " + " ");
-//
-//			} else {
-//				System.out.println(data.lineNumber + " " + data.CsValuePerLine);
-//			}
-//		}
 
 	}
 
