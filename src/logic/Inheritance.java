@@ -88,7 +88,6 @@ public class Inheritance {
 
 						int occurence_count = StringUtils.countMatches(words, SizeContstants.IHERITANCE[arithmetic]);
 						Inhercomplexity = Inhercomplexity + occurence_count;
-
 						anyHits = true;
 
 					}
@@ -97,7 +96,6 @@ public class Inheritance {
 
 				if (line.trim().length() == 0) {
 					Inhercomplexity1 = 0;
-
 					break;
 				}
 			}
