@@ -39,7 +39,8 @@ public class Control_structures {
 	            
 	            //if line is not null run the while 
 	            while (line != null) {
-	                StringTokenizer stringToken = new StringTokenizer(line); // div-line to words 
+	                StringTokenizer stringToken = new StringTokenizer(line); // div-line to words
+	                
 	                complexity = 0;
 	                complexity2 = 0;
 	                complexity3 = 0;
