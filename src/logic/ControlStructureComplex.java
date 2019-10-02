@@ -134,7 +134,7 @@ public class ControlStructureComplex {
 					anyMatches = true;
 				}
 
-				// if code includes "DO-WHILE loop"
+				// if code includes a "DO-WHILE loop"
 				if (StringUtils.contains(control_line, ControlStructureConstants.DO)) {
 					complexityControlStructure = complexityControlStructure + 2;
 
@@ -178,7 +178,7 @@ public class ControlStructureComplex {
 
 
 		} catch (Exception e) {
-			LOG.info(e.toString());
+			LOG.info(e.toString()); //logging the exception
 		}
 
 	}
@@ -187,7 +187,6 @@ public class ControlStructureComplex {
 		int nestedCount=0; //initialize count
 		List<Integer> nestedCountList=new ArrayList<Integer>();
 		int totalNestedCount=0;
-		//states
 		int bState=0;
 		
 		
