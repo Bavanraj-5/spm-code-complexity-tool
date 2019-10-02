@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class Control_structures {
 	
-	String fileLocation;
+    String fileLocation;
     String words;
     String words2;
     String line = null;
@@ -35,7 +35,7 @@ public class Control_structures {
 	        	
 	            FileReader filereader = new FileReader(fileLocation);
 	            BufferedReader bufferedreader = new BufferedReader(filereader);
-	            line = bufferedreader.readLine(); // every line read it
+	            line = bufferedreader.readLine(); // every lines read it
 	            
 	            //if line is not null run the while 
 	            while (line != null) {
@@ -116,7 +116,7 @@ public class Control_structures {
 	                    
 	                    // find the cases from the line 
 	                    for (int i = 0; i < cs4keywords.length; i++) {
-	                        if (cs4keywords[i].equals("//")) {
+	                        if (cs4keywords[i].equals("//")) { // checking comments
 	                            break;
 	                        } else {
 	                            if (cs4keywords[i].equals(words)) {
